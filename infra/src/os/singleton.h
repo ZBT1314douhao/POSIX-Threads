@@ -1,5 +1,5 @@
-#ifndef __INFRA_OS_SINGLETON_H__
-#define __INFRA_OS_SINGLETON_H__
+#ifndef __INFRA_SRC_OS_SINGLETON_H__
+#define __INFRA_SRC_OS_SINGLETON_H__
 
 #include "singleton.h"
 

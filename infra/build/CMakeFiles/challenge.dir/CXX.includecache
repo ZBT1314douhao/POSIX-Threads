@@ -298,31 +298,31 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/home/lumia/workspace/code/infra/src/os/mutex.cpp
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.cpp
 mutex.h
-/home/lumia/workspace/code/infra/src/os/mutex.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
 assert.h
 -
 thread.h
-/home/lumia/workspace/code/infra/src/os/thread.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.h
 
-/home/lumia/workspace/code/infra/src/os/mutex.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
 pthread.h
 -
 cstdio
 -
 
-/home/lumia/workspace/code/infra/src/os/singleton.cpp
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.cpp
 singleton.h
-/home/lumia/workspace/code/infra/src/os/singleton.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.h
 
-/home/lumia/workspace/code/infra/src/os/singleton.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.h
 singleton.h
-/home/lumia/workspace/code/infra/src/os/singleton.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.h
 
-/home/lumia/workspace/code/infra/src/os/thread.cpp
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.cpp
 thread.h
-/home/lumia/workspace/code/infra/src/os/thread.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.h
 pthread.h
 -
 sys/types.h
@@ -339,20 +339,24 @@ cassert
 -
 list
 -
+../utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
 
-/home/lumia/workspace/code/infra/src/os/thread.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.h
 string
 -
 functional
 -
 
-/home/lumia/workspace/code/infra/src/tests/test_main.cpp
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_main.cpp
 iostream
 -
 gtest/gtest.h
-/home/lumia/workspace/code/infra/src/tests/gtest/gtest.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
+../utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
 
-/home/lumia/workspace/code/infra/src/tests/test_thread.cpp
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread.cpp
 cstdio
 -
 cstdlib
@@ -364,7 +368,23 @@ string
 thread
 -
 gtest/gtest.h
-/home/lumia/workspace/code/infra/src/tests/gtest/gtest.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
 ../os/thread.h
-/home/lumia/workspace/code/infra/src/os/thread.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.h
+../utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
+
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.cpp
+colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
+cstdio
+-
+cstdarg
+-
+
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
+pthread.h
+-
+cstdio
+-
 

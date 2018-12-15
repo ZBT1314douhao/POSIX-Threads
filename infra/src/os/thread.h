@@ -1,5 +1,5 @@
-#ifndef __ZBT_THREAD_H__
-#define __ZBT_THREAD_H__
+#ifndef __INFRA_SRC_OS_THREAD_H__
+#define __INFRA_SRC_OS_THREAD_H__
 
 #include <string>
 #include <functional>

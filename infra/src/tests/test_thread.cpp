@@ -7,6 +7,7 @@
 
 #include "gtest/gtest.h"
 #include "../os/thread.h"
+#include "../utils/colorfulprint.h"
 
 using namespace std;
 using namespace Infra;

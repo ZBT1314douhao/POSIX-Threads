@@ -1,9 +1,10 @@
-        
+
 #include "mutex.h"
 #include <assert.h>
 #include "thread.h"
 
-namespace Infra {
+namespace Infra
+{
 
 struct MutexInfo
 {
@@ -32,7 +33,7 @@ CMutex::CMutex()
     {
         printf("[mutex.cpp line:33] failed in pthread_mutexattr_destroy, ret = %d\n", ret);
     }
-    
+
     // pthread_mutex_init(&m_mutex, NULL);
 }
 
@@ -42,10 +43,10 @@ CMutex::~CMutex()
     if (ret != 0)
     {
         printf("[mutex.cpp line:44] failed in pthread_mutex_destroy, ret = %d\n", ret);
-    } 
-    
+    }
+
     // int ret = pthread_mutex_destroy(&m_mutex);
-    // assert(ret == 0);   
+    // assert(ret == 0);
 }
 
 bool CMutex::lock()
@@ -62,13 +63,13 @@ bool CMutex::lock()
 
     // return (pthread_mutex_lock(&m_mutex) == 0);
 }
-    
+
 bool CMutex::trylock()
 {
     if (pthread_mutex_trylock(&m_mutexInfo->mutex) == 0)
     {
         m_mutexInfo->owner = CThread::getCurrentThreadId();
-        
+
         return true;
     }
 
@@ -92,4 +93,4 @@ bool CMutex::unlock()
     // return (pthread_mutex_unlock(&m_mutex) == 0);
 }
 
-};
+}; // namespace Infra

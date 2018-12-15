@@ -10,6 +10,8 @@
 #include <cassert>
 #include <list>
 
+#include "../utils/colorfulprint.h"
+
 namespace Infra {
 
 struct ThreadInfo

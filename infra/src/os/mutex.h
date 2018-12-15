@@ -1,7 +1,5 @@
-
-
-#ifndef __ZBT_MUTEX_H__
-#define __ZBT_MUTEX_H__
+#ifndef __INFRA_SRC_OS_MUTEX_H__
+#define __INFRA_SRC_OS_MUTEX_H__
 
 #include <pthread.h>
 #include <cstdio>

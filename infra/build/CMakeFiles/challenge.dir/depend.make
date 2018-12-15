@@ -10,6 +10,7 @@ CMakeFiles/challenge.dir/src/os/singleton.cpp.o: ../src/os/singleton.h
 
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/os/thread.cpp
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/os/thread.h
+CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/utils/colorfulprint.h
 
 CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../include/gtest/gtest-death-test.h
 CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../include/gtest/gtest-matchers.h
@@ -33,6 +34,7 @@ CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../include/gtest/internal/gt
 CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../include/gtest/internal/gtest-string.h
 CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../include/gtest/internal/gtest-type-util.h
 CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../src/tests/test_main.cpp
+CMakeFiles/challenge.dir/src/tests/test_main.cpp.o: ../src/utils/colorfulprint.h
 
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../include/gtest/gtest-death-test.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../include/gtest/gtest-matchers.h
@@ -57,4 +59,8 @@ CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../include/gtest/internal/
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../include/gtest/internal/gtest-type-util.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/os/thread.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/tests/test_thread.cpp
+CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/utils/colorfulprint.h
+
+CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o: ../src/utils/colorfulprint.cpp
+CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o: ../src/utils/colorfulprint.h
 

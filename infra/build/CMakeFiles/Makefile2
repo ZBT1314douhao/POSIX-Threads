@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lumia/workspace/code/infra
+CMAKE_SOURCE_DIR = /home/lumia/workspace/documents/POSIX-Threads/infra
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lumia/workspace/code/infra/build
+CMAKE_BINARY_DIR = /home/lumia/workspace/documents/POSIX-Threads/infra/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/challenge.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/lumia/workspace/code/infra/build
 CMakeFiles/challenge.dir/all:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/depend
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lumia/workspace/code/infra/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target challenge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target challenge"
 .PHONY : CMakeFiles/challenge.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/challenge.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/challenge.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/code/infra/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/challenge.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/code/infra/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles 0
 .PHONY : CMakeFiles/challenge.dir/rule
 
 # Convenience name for target.

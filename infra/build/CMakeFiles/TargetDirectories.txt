@@ -1,3 +1,3 @@
-/home/lumia/workspace/code/infra/build/CMakeFiles/rebuild_cache.dir
-/home/lumia/workspace/code/infra/build/CMakeFiles/challenge.dir
-/home/lumia/workspace/code/infra/build/CMakeFiles/edit_cache.dir
+/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/rebuild_cache.dir
+/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir
+/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/edit_cache.dir

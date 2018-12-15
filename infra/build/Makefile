@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lumia/workspace/code/infra
+CMAKE_SOURCE_DIR = /home/lumia/workspace/documents/POSIX-Threads/infra
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lumia/workspace/code/infra/build
+CMAKE_BINARY_DIR = /home/lumia/workspace/documents/POSIX-Threads/infra/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/code/infra/build/CMakeFiles /home/lumia/workspace/code/infra/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles /home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/code/infra/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -258,6 +258,33 @@ src/tests/test_thread.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_thread.cpp.s
 .PHONY : src/tests/test_thread.cpp.s
 
+src/utils/colorfulprint.o: src/utils/colorfulprint.cpp.o
+
+.PHONY : src/utils/colorfulprint.o
+
+# target to build an object file
+src/utils/colorfulprint.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o
+.PHONY : src/utils/colorfulprint.cpp.o
+
+src/utils/colorfulprint.i: src/utils/colorfulprint.cpp.i
+
+.PHONY : src/utils/colorfulprint.i
+
+# target to preprocess a source file
+src/utils/colorfulprint.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.i
+.PHONY : src/utils/colorfulprint.cpp.i
+
+src/utils/colorfulprint.s: src/utils/colorfulprint.cpp.s
+
+.PHONY : src/utils/colorfulprint.s
+
+# target to generate assembly for a file
+src/utils/colorfulprint.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.s
+.PHONY : src/utils/colorfulprint.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +309,9 @@ help:
 	@echo "... src/tests/test_thread.o"
 	@echo "... src/tests/test_thread.i"
 	@echo "... src/tests/test_thread.s"
+	@echo "... src/utils/colorfulprint.o"
+	@echo "... src/utils/colorfulprint.i"
+	@echo "... src/utils/colorfulprint.s"
 .PHONY : help
 
 

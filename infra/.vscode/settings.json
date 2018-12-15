@@ -35,6 +35,7 @@
         "cstdarg": "cpp",
         "mutex": "cpp",
         "atomic": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "string": "cpp"
     }
 }

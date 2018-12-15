@@ -19,6 +19,8 @@ set(CMAKE_BUILD_TYPE_DEBUG)
 # -D__WUR= -D_REENTRANT -D_FILE_OFFSET_BITS=64 -DTIXML_USE_STL
 #)
 add_definitions(-O3 -g -W -Wall)
+add_definitions(-DUSE_COLORFULPRINT)
+add_definitions(-DMODULE_NAME="Infra")
 
 # 使用运行test_main
 option(use_gtest "use google test, run test_main.cpp" ON)
@@ -38,6 +40,7 @@ else()
 endif()
 AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/src/application DIR_SRCS)
 AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/src/os DIR_SRCS)
+AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/src/utils DIR_SRCS)
 message("all source files is ${DIR_SRCS}")
 
 # 库文件路径

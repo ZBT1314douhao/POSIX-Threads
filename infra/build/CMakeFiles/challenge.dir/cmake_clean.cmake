@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
   "CMakeFiles/challenge.dir/src/os/singleton.cpp.o"
   "CMakeFiles/challenge.dir/src/os/thread.cpp.o"
+  "CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o"
   "challenge.pdb"
   "challenge"
 )
