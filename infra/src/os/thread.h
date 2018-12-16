@@ -15,7 +15,7 @@ enum ThreadPriority
 
 enum ThreadPolicy
 {
-    POLICY_OTHER,   // operating system determines，不支持优先级设置
+    POLICY_OTHER,   // time-sharing，不支持优先级设置，可以设置nice值
     POLICY_FIFO,    // first in-first out
     POLICY_RR,      // round-robin
 };

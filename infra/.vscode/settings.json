@@ -36,6 +36,7 @@
         "mutex": "cpp",
         "atomic": "cpp",
         "thread": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "chrono": "cpp"
     }
 }
