@@ -305,6 +305,8 @@ assert.h
 -
 thread.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.h
+../utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
 
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
 pthread.h
@@ -353,6 +355,22 @@ iostream
 -
 gtest/gtest.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
+../utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
+
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_mutex.cpp
+cstdio
+-
+cstdlib
+-
+iostream
+-
+string
+-
+gtest/gtest.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
+../os/mutex.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
 ../utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
 

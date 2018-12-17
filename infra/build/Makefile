@@ -231,6 +231,33 @@ src/tests/test_main.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_main.cpp.s
 .PHONY : src/tests/test_main.cpp.s
 
+src/tests/test_mutex.o: src/tests/test_mutex.cpp.o
+
+.PHONY : src/tests/test_mutex.o
+
+# target to build an object file
+src/tests/test_mutex.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o
+.PHONY : src/tests/test_mutex.cpp.o
+
+src/tests/test_mutex.i: src/tests/test_mutex.cpp.i
+
+.PHONY : src/tests/test_mutex.i
+
+# target to preprocess a source file
+src/tests/test_mutex.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.i
+.PHONY : src/tests/test_mutex.cpp.i
+
+src/tests/test_mutex.s: src/tests/test_mutex.cpp.s
+
+.PHONY : src/tests/test_mutex.s
+
+# target to generate assembly for a file
+src/tests/test_mutex.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.s
+.PHONY : src/tests/test_mutex.cpp.s
+
 src/tests/test_thread.o: src/tests/test_thread.cpp.o
 
 .PHONY : src/tests/test_thread.o
@@ -306,6 +333,9 @@ help:
 	@echo "... src/tests/test_main.o"
 	@echo "... src/tests/test_main.i"
 	@echo "... src/tests/test_main.s"
+	@echo "... src/tests/test_mutex.o"
+	@echo "... src/tests/test_mutex.i"
+	@echo "... src/tests/test_mutex.s"
 	@echo "... src/tests/test_thread.o"
 	@echo "... src/tests/test_thread.i"
 	@echo "... src/tests/test_thread.s"

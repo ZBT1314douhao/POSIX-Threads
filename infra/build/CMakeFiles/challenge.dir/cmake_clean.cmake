@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/challenge.dir/src/tests/test_main.cpp.o"
+  "CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o"
   "CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o"
   "CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
   "CMakeFiles/challenge.dir/src/os/singleton.cpp.o"
