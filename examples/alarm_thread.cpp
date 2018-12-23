@@ -2,11 +2,11 @@
 // 程序说明：该程序循环接受用户输入信息，直到出错或输入完毕。用户输入的每行信息中，
 // 第一部分时闹钟等待时间（单位：秒），第二部分是闹钟到达时显示的文本消息。
 // 本程序为多线程版本
-#include <pthread.h>
-#include <cstdio>
-#include <cstdlib>
-#include <unistd.h>     // sleep头文件
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>     // sleep头文件
+#include <pthread.h>
 
 typedef struct alarm_info
 {

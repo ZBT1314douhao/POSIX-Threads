@@ -3,12 +3,12 @@
 // 第一部分时闹钟等待时间（单位：秒），第二部分是闹钟到达时显示的文本消息。
 // 本程序为基本的同步版本，一次只能处理一个闹钟请求，实际上是把希望异步处理的工作
 // 同步处理了
-#include <pthread.h>
-#include <cstdio>
-#include <cstdlib>
-#include <unistd.h>     // sleep头文件
-#include <string.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>     // sleep头文件
+#include <pthread.h>
 
 int main(int argc, char const *argv[])
 {

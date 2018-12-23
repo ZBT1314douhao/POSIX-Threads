@@ -5,13 +5,13 @@
 // 例如：先设定一个20s的闹钟，再设定一个10s的闹钟，尽管10s的闹钟会提前过期，但是只有当20s的闹钟过期时，
 // 才能看到10s的闹钟打印的过期信息
 
-#include <pthread.h>
-#include <cstdio>
-#include <cstdlib>
-#include <unistd.h>     // sleep头文件
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <errno.h>
+#include <unistd.h>     // sleep头文件
+#include <pthread.h>
 
 #define err_abort(code, text)   do {\
         fprintf(stderr, "%s at \"%s\":%d: %s\n", text, __FILE__, __LINE__, strerror(code));\

@@ -3,13 +3,13 @@
 // 第一部分时闹钟等待时间（单位：秒），第二部分是闹钟到达时显示的文本消息。
 // 本程序为基本的异步版本，为每个命令使用fork调用生成一个子进程，在子进程中异步调用sleep函数
 // 而父进程则继续运行。
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <sys/types.h>
+#include <unistd.h>     // sleep头文件
 #include <wait.h>
 #include <pthread.h>
-#include <cstdio>
-#include <cstdlib>
-#include <unistd.h>     // sleep头文件
-#include <string.h>
 
 
 int main(int argc, char const *argv[])
