@@ -123,6 +123,33 @@ challenge/fast:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/build
 .PHONY : challenge/fast
 
+src/os/condition.o: src/os/condition.cpp.o
+
+.PHONY : src/os/condition.o
+
+# target to build an object file
+src/os/condition.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/condition.cpp.o
+.PHONY : src/os/condition.cpp.o
+
+src/os/condition.i: src/os/condition.cpp.i
+
+.PHONY : src/os/condition.i
+
+# target to preprocess a source file
+src/os/condition.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/condition.cpp.i
+.PHONY : src/os/condition.cpp.i
+
+src/os/condition.s: src/os/condition.cpp.s
+
+.PHONY : src/os/condition.s
+
+# target to generate assembly for a file
+src/os/condition.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/condition.cpp.s
+.PHONY : src/os/condition.cpp.s
+
 src/os/mutex.o: src/os/mutex.cpp.o
 
 .PHONY : src/os/mutex.o
@@ -203,6 +230,33 @@ src/os/thread.s: src/os/thread.cpp.s
 src/os/thread.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/thread.cpp.s
 .PHONY : src/os/thread.cpp.s
+
+src/tests/test_condition_variable.o: src/tests/test_condition_variable.cpp.o
+
+.PHONY : src/tests/test_condition_variable.o
+
+# target to build an object file
+src/tests/test_condition_variable.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o
+.PHONY : src/tests/test_condition_variable.cpp.o
+
+src/tests/test_condition_variable.i: src/tests/test_condition_variable.cpp.i
+
+.PHONY : src/tests/test_condition_variable.i
+
+# target to preprocess a source file
+src/tests/test_condition_variable.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.i
+.PHONY : src/tests/test_condition_variable.cpp.i
+
+src/tests/test_condition_variable.s: src/tests/test_condition_variable.cpp.s
+
+.PHONY : src/tests/test_condition_variable.s
+
+# target to generate assembly for a file
+src/tests/test_condition_variable.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.s
+.PHONY : src/tests/test_condition_variable.cpp.s
 
 src/tests/test_main.o: src/tests/test_main.cpp.o
 
@@ -321,6 +375,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... challenge"
 	@echo "... edit_cache"
+	@echo "... src/os/condition.o"
+	@echo "... src/os/condition.i"
+	@echo "... src/os/condition.s"
 	@echo "... src/os/mutex.o"
 	@echo "... src/os/mutex.i"
 	@echo "... src/os/mutex.s"
@@ -330,6 +387,9 @@ help:
 	@echo "... src/os/thread.o"
 	@echo "... src/os/thread.i"
 	@echo "... src/os/thread.s"
+	@echo "... src/tests/test_condition_variable.o"
+	@echo "... src/tests/test_condition_variable.i"
+	@echo "... src/tests/test_condition_variable.s"
 	@echo "... src/tests/test_main.o"
 	@echo "... src/tests/test_main.i"
 	@echo "... src/tests/test_main.s"

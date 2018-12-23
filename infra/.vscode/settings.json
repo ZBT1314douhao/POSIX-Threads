@@ -37,6 +37,7 @@
         "atomic": "cpp",
         "thread": "cpp",
         "string": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "condition_variable": "cpp"
     }
 }

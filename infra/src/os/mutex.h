@@ -2,7 +2,6 @@
 #define __INFRA_SRC_OS_MUTEX_H__
 
 #include <pthread.h>
-#include <cstdio>
 
 namespace Infra {
 
@@ -13,16 +12,20 @@ class CMutex
     CMutex(const CMutex&);
     CMutex& operator = (const CMutex&);
 public:
+    typedef pthread_mutex_t     NativeType;
+    typedef NativeType*         NativeHandleType;
+
+  public:
     CMutex();
     ~CMutex();
     bool lock();
     bool trylock();
     bool unlock();
+    bool locked() const;
+    NativeHandleType nativeHandle();
 
-private:
-    pthread_mutex_t m_mutex;
-    pthread_mutexattr_t m_mtxattr;
-    MutexInfo *m_mutexInfo;
+  private:
+    MutexInfo *m_mutex_info;
 };
 
 class CMutexGuard
@@ -32,13 +35,11 @@ public:
     : m_mutex(mutex)
     {
         m_mutex.lock();
-        printf("[mutex.h line:33] mutex lock\n");
     }
 
     ~CMutexGuard()
     {
         m_mutex.unlock();
-        printf("[mutex.h line:40] mutex unlock\n");
     }
 
 private:

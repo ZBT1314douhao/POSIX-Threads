@@ -6,5 +6,5 @@ CXX_FLAGS =   -O3 -g -W -Wall
 
 CXX_DEFINES = -DMODULE_NAME=\"Infra\" -DUSE_COLORFULPRINT
 
-CXX_INCLUDES = -I/home/lumia/workspace/documents/POSIX-Threads/infra/include 
+CXX_INCLUDES = -I/home/lumia/workspace/documents/POSIX-Threads/infra/include -I/home/lumia/workspace/documents/POSIX-Threads/infra/src 
 

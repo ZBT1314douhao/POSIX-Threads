@@ -27,7 +27,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceRoot}",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/src"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",

@@ -28,7 +28,7 @@ option(use_gtest "use google test, run test_main.cpp" ON)
 # 头文件目录
 include_directories(${PROJECT_SOURCE_DIR}/include)
 #include_directories(${PROJECT_SOURCE_DIR}/include/json)
-#include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${PROJECT_SOURCE_DIR}/src)
 
 # 源文件目录
 # 是否使用gtest的测试代码

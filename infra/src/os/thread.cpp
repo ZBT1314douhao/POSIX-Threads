@@ -1,16 +1,17 @@
 
 #include "thread.h"
 
-#include <pthread.h>
-#include <sys/types.h>
 #include <sys/syscall.h>
+#include <sys/types.h>
+#include <unistd.h>     // sleep头文件
+
+#include <cassert>
 #include <cstdio>
 #include <cstdlib>
-#include <unistd.h>     // sleep头文件
-#include <cassert>
 #include <list>
 
-#include "../utils/colorfulprint.h"
+#include <pthread.h>
+#include "utils/colorfulprint.h"
 
 namespace Infra {
 
@@ -279,6 +280,11 @@ void CThread::sleepMicroSecond(int ms)
     tval.tv_sec = 0;
     tval.tv_usec = 1000 * ms;
     (void)select(0, NULL, NULL, NULL, &tval);
+}
+
+CThread::NativeHandleType CThread::nativeHandle()
+{
+    return &m_thread_info->pthread_id;
 }
 
 // ==========================================================================================================

@@ -26,9 +26,12 @@ struct ThreadInfo;
 class CThread
 {
 private:
-    // CThread是不可复制的
     CThread(const CThread&);
     CThread& operator = (const CThread&);
+
+public:
+    typedef pthread_t           NativeType;
+    typedef NativeType*         NativeHandleType;
 
 public:
     CThread(const std::string& name = std::string("defaults"), int policy = POLICY_OTHER, int priority = PRIORITY_DEFAULT);
@@ -49,6 +52,8 @@ public:
     static int getCurrentThreadId();
     static void sleepMicroSecond(int ms);     
 
+    NativeHandleType nativeHandle();
+    
 private:
 
 private:
