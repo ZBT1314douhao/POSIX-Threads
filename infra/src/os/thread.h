@@ -4,35 +4,36 @@
 #include <string>
 #include <functional>
 
+#include "utils/singleton.h"
+#include "utils/uncopyable.h"  
+
 namespace Infra {
-
-enum ThreadPriority
-{
-    PRIORITY_MIN = 1,
-    PRIORITY_DEFAULT = 50,
-    PRIORITY_MAX = 99,
-};
-
-enum ThreadPolicy
-{
-    POLICY_OTHER,   // time-sharing，不支持优先级设置，可以设置nice值
-    POLICY_FIFO,    // first in-first out
-    POLICY_RR,      // round-robin
-};
 
 struct ThreadInfo;
 
 // 虚函数+继承，使用者需要重写基类的纯虚函数，实现自己的逻辑
 class CThread
 {
-private:
-    CThread(const CThread&);
-    CThread& operator = (const CThread&);
+    INFRA_DISABLE_COPY(CThread)
 
 public:
     typedef pthread_t           NativeType;
     typedef NativeType*         NativeHandleType;
 
+    enum ThreadPriority
+    {
+        PRIORITY_MIN = 1,
+        PRIORITY_DEFAULT = 50,
+        PRIORITY_MAX = 99,
+    };
+
+    enum ThreadPolicy
+    {
+        POLICY_OTHER,   // time-sharing，不支持优先级设置，可以设置nice值
+        POLICY_FIFO,    // first in-first out
+        POLICY_RR,      // round-robin
+    };
+    
 public:
     CThread(const std::string& name = std::string("defaults"), int policy = POLICY_OTHER, int priority = PRIORITY_DEFAULT);
     virtual ~CThread();
@@ -65,13 +66,18 @@ struct ThreadManagerInfo;
 
 class CThreadManager
 {
+    INFRA_SINGLETON_DECLARE(CThreadManager)
+// public:
+//   CThreadManager();
+//   ~CThreadManager();
+
 public:
-    bool add();
-    bool remove();
-    void dump();
+  bool add(ThreadInfo* thread);
+  bool remove(ThreadInfo* thread);
+  void dump();
 
 private:
-    // ThreadManagerInfo m_threadManagerInfo;
+    ThreadManagerInfo *m_manager;
 };
 
 // ==========================================================================================================
@@ -84,7 +90,10 @@ public:
     typedef std::function<void ()> ThreadFunc;
 
 public:
-    explicit CThreadLite(const ThreadFunc& func, const std::string& name = std::string("dftlName"), int policy = POLICY_OTHER, int priority = PRIORITY_DEFAULT);
+    explicit CThreadLite(const ThreadFunc& func, 
+                        const std::string& name = std::string("dftlName"), 
+                        int policy = POLICY_OTHER, 
+                        int priority = PRIORITY_DEFAULT);
     ~CThreadLite();
 
     void run();

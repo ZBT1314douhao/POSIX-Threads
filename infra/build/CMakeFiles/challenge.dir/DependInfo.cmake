@@ -6,11 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/condition.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/os/condition.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
-  "/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/os/singleton.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/os/thread.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_condition_variable.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_main.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_main.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_mutex.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o"
+  "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_singleton.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o"
   )

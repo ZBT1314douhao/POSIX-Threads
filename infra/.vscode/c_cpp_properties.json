@@ -28,7 +28,8 @@
             "includePath": [
                 "${workspaceRoot}",
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/src"
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/src/utils"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",

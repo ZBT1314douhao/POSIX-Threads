@@ -15,6 +15,7 @@ class CCondition
 public:
     typedef pthread_cond_t      NativeType;
     typedef NativeType*         NativeHandleType;
+    
 public:
     CCondition();
     ~CCondition();

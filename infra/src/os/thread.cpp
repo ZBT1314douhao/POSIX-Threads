@@ -2,15 +2,21 @@
 #include "thread.h"
 
 #include <sys/syscall.h>
+#include <sys/resource.h>
+#include <sys/time.h>
 #include <sys/types.h>
+
 #include <unistd.h>     // sleep头文件
 
+#include <algorithm>
 #include <cassert>
 #include <cstdio>
 #include <cstdlib>
 #include <list>
 
 #include <pthread.h>
+
+#include "mutex.h"
 #include "utils/colorfulprint.h"
 
 namespace Infra {
@@ -19,6 +25,7 @@ struct ThreadInfo
 {
     pthread_t pthread_id;
     CThread *thread;
+    CThreadManager *manager;
     std::string name;
     int priority;
     int policy;
@@ -33,7 +40,18 @@ struct ThreadInfo
 void* threadBody(void *arg)
 {
     ThreadInfo *thread_info = static_cast<ThreadInfo *>(arg);
+    if (thread_info->policy == CThread::POLICY_OTHER)
+    {
+        int priority = -19 + (thread_info->priority * 39) / (Infra::CThread::PRIORITY_MAX + 1);
+        /// \brief 
+        /// \param which PRIO_PROCESS, PRIO_PGRP, or PRIO_USER
+        /// \param who 0表示对应的调用进程、调用进程的进程组、调用线程的真是User ID
+        /// \param prio 取值范围-20（最高优先级）到19（最低优先级），默认为0
+        setpriority(PRIO_PROCESS, 0, priority);
+    }
+    thread_info->manager->add(thread_info);
     thread_info->thread->run();
+    thread_info->manager->remove(thread_info);
     printf("[thread.cpp] thread terminated, releas resources\n");
     delete thread_info;
 
@@ -48,6 +66,7 @@ CThread::CThread(const std::string& name /*= std::string("defaults")*/, int poli
 
     m_thread_info = new ThreadInfo;
     m_thread_info->thread = this;
+    m_thread_info->manager = &CThreadManager::instance();
     m_thread_info->name = name;
     m_thread_info->priority = priority;
     m_thread_info->policy = policy;
@@ -213,7 +232,7 @@ bool CThread::detach()
 
 // \brief 向指定线程发送取消请求，当被取消的线程终止后，用pthread_join连接该线程
 // 将获取到 PTHREAD_CANCELED 作为线程的退出状态。
-// \note 知道取消是否完成的唯一方式时连接该线程
+// \note 知道取消是否完成的唯一方式是连接该线程
 bool CThread::cancel()
 {
     if (!m_thread_info->looping || m_thread_info->destoryed)
@@ -237,8 +256,6 @@ bool CThread::cancel()
 
     return true;
 }
-
-
 
 std::string CThread::getName() const noexcept
 {
@@ -290,23 +307,49 @@ CThread::NativeHandleType CThread::nativeHandle()
 // ==========================================================================================================
 struct ThreadManagerInfo
 {
-    std::list<ThreadInfo> threadInfo;
+    std::list<ThreadInfo*> thread_info;
+    CMutex thread_info_mutex;
 };
 
-bool CThreadManager::add()
+INFRA_SINGLETON_IMPLEMENT(CThreadManager)
+
+CThreadManager::CThreadManager()
 {
+    m_manager = new ThreadManagerInfo;
+}
+
+CThreadManager::~CThreadManager()
+{
+    delete m_manager;
+}
+
+bool CThreadManager::add(ThreadInfo* thread)
+{
+    m_manager->thread_info.push_back(thread);
+    warnf("add new thread\n");
     return true;
 }
 
-bool CThreadManager::remove()
+bool CThreadManager::remove(ThreadInfo* thread)
 {
+    auto it = std::find(m_manager->thread_info.begin(), m_manager->thread_info.end(), thread);
+    if (it != m_manager->thread_info.end())
+    {
+        m_manager->thread_info.erase(it);
+        warnf("delete thread\n");
+        return true;
+    }
 
-    return true;
+    errorf("failed in remove thread from thread manager\n");
+    return false;
 }
 
 void CThreadManager::dump()
 {
-    // dump thread info
+    for (auto it = m_manager->thread_info.begin(); it != m_manager->thread_info.end(); ++it)
+    {
+        fatalf("thread name = %s\n", (*it)->name.c_str());
+    }
 }
 
 // ==========================================================================================================
@@ -315,8 +358,10 @@ struct ThreadLiteInfo
     CThreadLite::ThreadFunc func;
 };
 
-CThreadLite::CThreadLite(const ThreadFunc& func, const std::string& name /*= std::string("dftlName")*/, 
-                        int policy /*= POLICY_OTHER*/, int priority /*= PRIORITY_DEFAULT*/)
+CThreadLite::CThreadLite(const ThreadFunc& func, 
+                        const std::string& name /*= std::string("dftlName")*/, 
+                        int policy /*= POLICY_OTHER*/, 
+                        int priority /*= PRIORITY_DEFAULT*/)
     : CThread(name, policy, priority)
 {
     printf("[thread.cpp] threadlite name = %s\n", name.c_str());

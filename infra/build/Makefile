@@ -177,33 +177,6 @@ src/os/mutex.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/mutex.cpp.s
 .PHONY : src/os/mutex.cpp.s
 
-src/os/singleton.o: src/os/singleton.cpp.o
-
-.PHONY : src/os/singleton.o
-
-# target to build an object file
-src/os/singleton.cpp.o:
-	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/singleton.cpp.o
-.PHONY : src/os/singleton.cpp.o
-
-src/os/singleton.i: src/os/singleton.cpp.i
-
-.PHONY : src/os/singleton.i
-
-# target to preprocess a source file
-src/os/singleton.cpp.i:
-	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/singleton.cpp.i
-.PHONY : src/os/singleton.cpp.i
-
-src/os/singleton.s: src/os/singleton.cpp.s
-
-.PHONY : src/os/singleton.s
-
-# target to generate assembly for a file
-src/os/singleton.cpp.s:
-	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/singleton.cpp.s
-.PHONY : src/os/singleton.cpp.s
-
 src/os/thread.o: src/os/thread.cpp.o
 
 .PHONY : src/os/thread.o
@@ -312,6 +285,33 @@ src/tests/test_mutex.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.s
 .PHONY : src/tests/test_mutex.cpp.s
 
+src/tests/test_singleton.o: src/tests/test_singleton.cpp.o
+
+.PHONY : src/tests/test_singleton.o
+
+# target to build an object file
+src/tests/test_singleton.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o
+.PHONY : src/tests/test_singleton.cpp.o
+
+src/tests/test_singleton.i: src/tests/test_singleton.cpp.i
+
+.PHONY : src/tests/test_singleton.i
+
+# target to preprocess a source file
+src/tests/test_singleton.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.i
+.PHONY : src/tests/test_singleton.cpp.i
+
+src/tests/test_singleton.s: src/tests/test_singleton.cpp.s
+
+.PHONY : src/tests/test_singleton.s
+
+# target to generate assembly for a file
+src/tests/test_singleton.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.s
+.PHONY : src/tests/test_singleton.cpp.s
+
 src/tests/test_thread.o: src/tests/test_thread.cpp.o
 
 .PHONY : src/tests/test_thread.o
@@ -381,9 +381,6 @@ help:
 	@echo "... src/os/mutex.o"
 	@echo "... src/os/mutex.i"
 	@echo "... src/os/mutex.s"
-	@echo "... src/os/singleton.o"
-	@echo "... src/os/singleton.i"
-	@echo "... src/os/singleton.s"
 	@echo "... src/os/thread.o"
 	@echo "... src/os/thread.i"
 	@echo "... src/os/thread.s"
@@ -396,6 +393,9 @@ help:
 	@echo "... src/tests/test_mutex.o"
 	@echo "... src/tests/test_mutex.i"
 	@echo "... src/tests/test_mutex.s"
+	@echo "... src/tests/test_singleton.o"
+	@echo "... src/tests/test_singleton.i"
+	@echo "... src/tests/test_singleton.s"
 	@echo "... src/tests/test_thread.o"
 	@echo "... src/tests/test_thread.i"
 	@echo "... src/tests/test_thread.s"

@@ -313,12 +313,30 @@ string
 -
 functional
 -
+utils/singleton.h
+../src/os/utils/singleton.h
+utils/uncopyable.h
+../src/os/utils/uncopyable.h
 
 ../src/utils/colorfulprint.h
 pthread.h
 -
 cstdio
 -
+
+../src/utils/singleton.h
+singleton.h
+../src/utils/singleton.h
+cassert
+-
+memory
+-
+pthread.h
+-
+colorfulprint.h
+../src/utils/colorfulprint.h
+
+../src/utils/uncopyable.h
 
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/condition.cpp
 condition.h
@@ -352,22 +370,20 @@ utils/colorfulprint.h
 pthread.h
 -
 
-/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.cpp
-singleton.h
-/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.h
-
-/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.h
-singleton.h
-/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.h
-
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.cpp
 thread.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.h
 sys/syscall.h
 -
+sys/resource.h
+-
+sys/time.h
+-
 sys/types.h
 -
 unistd.h
+-
+algorithm
 -
 cassert
 -
@@ -379,6 +395,8 @@ list
 -
 pthread.h
 -
+mutex.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
 utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/colorfulprint.h
 
@@ -387,6 +405,10 @@ string
 -
 functional
 -
+utils/singleton.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/singleton.h
+utils/uncopyable.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/uncopyable.h
 
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_condition_variable.cpp
 cstdio
@@ -427,6 +449,16 @@ gtest/gtest.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
 ../utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
+
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_singleton.cpp
+gtest/gtest.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
+os/thread.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/os/thread.h
+utils/singleton.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/utils/singleton.h
+utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/utils/colorfulprint.h
 
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread.cpp
 cstdio

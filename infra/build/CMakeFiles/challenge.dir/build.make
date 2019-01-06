@@ -129,9 +129,33 @@ CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o.provides: CMakeFiles/challen
 CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o.provides.build: CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o
 
 
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: CMakeFiles/challenge.dir/flags.make
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/tests/test_singleton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_singleton.cpp
+
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_singleton.cpp > CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.i
+
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_singleton.cpp -o CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.s
+
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.requires:
+
+.PHONY : CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.requires
+
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.provides: CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.requires
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.provides.build
+.PHONY : CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.provides
+
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.provides.build: CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o
+
+
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/tests/test_thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread.cpp
 
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/challenge.dir/src/os/condition.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/os/condition.cpp.o: ../src/os/condition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/challenge.dir/src/os/condition.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/challenge.dir/src/os/condition.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/condition.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/condition.cpp
 
 CMakeFiles/challenge.dir/src/os/condition.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/challenge.dir/src/os/condition.cpp.o.provides.build: CMakeFiles/chall
 
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/os/mutex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/mutex.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.cpp
 
 CMakeFiles/challenge.dir/src/os/mutex.cpp.i: cmake_force
@@ -199,30 +223,6 @@ CMakeFiles/challenge.dir/src/os/mutex.cpp.o.provides: CMakeFiles/challenge.dir/s
 .PHONY : CMakeFiles/challenge.dir/src/os/mutex.cpp.o.provides
 
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o.provides.build: CMakeFiles/challenge.dir/src/os/mutex.cpp.o
-
-
-CMakeFiles/challenge.dir/src/os/singleton.cpp.o: CMakeFiles/challenge.dir/flags.make
-CMakeFiles/challenge.dir/src/os/singleton.cpp.o: ../src/os/singleton.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/challenge.dir/src/os/singleton.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/singleton.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.cpp
-
-CMakeFiles/challenge.dir/src/os/singleton.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/challenge.dir/src/os/singleton.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.cpp > CMakeFiles/challenge.dir/src/os/singleton.cpp.i
-
-CMakeFiles/challenge.dir/src/os/singleton.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/challenge.dir/src/os/singleton.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/singleton.cpp -o CMakeFiles/challenge.dir/src/os/singleton.cpp.s
-
-CMakeFiles/challenge.dir/src/os/singleton.cpp.o.requires:
-
-.PHONY : CMakeFiles/challenge.dir/src/os/singleton.cpp.o.requires
-
-CMakeFiles/challenge.dir/src/os/singleton.cpp.o.provides: CMakeFiles/challenge.dir/src/os/singleton.cpp.o.requires
-	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/singleton.cpp.o.provides.build
-.PHONY : CMakeFiles/challenge.dir/src/os/singleton.cpp.o.provides
-
-CMakeFiles/challenge.dir/src/os/singleton.cpp.o.provides.build: CMakeFiles/challenge.dir/src/os/singleton.cpp.o
 
 
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: CMakeFiles/challenge.dir/flags.make
@@ -278,10 +278,10 @@ challenge_OBJECTS = \
 "CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o" \
 "CMakeFiles/challenge.dir/src/tests/test_main.cpp.o" \
 "CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o" \
+"CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o" \
 "CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o" \
 "CMakeFiles/challenge.dir/src/os/condition.cpp.o" \
 "CMakeFiles/challenge.dir/src/os/mutex.cpp.o" \
-"CMakeFiles/challenge.dir/src/os/singleton.cpp.o" \
 "CMakeFiles/challenge.dir/src/os/thread.cpp.o" \
 "CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o"
 
@@ -291,10 +291,10 @@ challenge_EXTERNAL_OBJECTS =
 challenge: CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o
 challenge: CMakeFiles/challenge.dir/src/tests/test_main.cpp.o
 challenge: CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o
+challenge: CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o
 challenge: CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o
 challenge: CMakeFiles/challenge.dir/src/os/condition.cpp.o
 challenge: CMakeFiles/challenge.dir/src/os/mutex.cpp.o
-challenge: CMakeFiles/challenge.dir/src/os/singleton.cpp.o
 challenge: CMakeFiles/challenge.dir/src/os/thread.cpp.o
 challenge: CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o
 challenge: CMakeFiles/challenge.dir/build.make
@@ -310,10 +310,10 @@ CMakeFiles/challenge.dir/build: challenge
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_main.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o.requires
+CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/condition.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/mutex.cpp.o.requires
-CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/singleton.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/thread.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o.requires
 
