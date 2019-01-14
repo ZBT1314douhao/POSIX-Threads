@@ -52,7 +52,7 @@ void* threadBody(void *arg)
     thread_info->manager->add(thread_info);
     thread_info->thread->run();
     thread_info->manager->remove(thread_info);
-    printf("[thread.cpp] thread terminated, releas resources\n");
+    tracef("thread terminated, releas resources\n");
     delete thread_info;
 
     return NULL;    // 相当于隐式调用pthread_exit
@@ -66,7 +66,7 @@ CThread::CThread(const std::string& name /*= std::string("defaults")*/, int poli
 
     m_thread_info = new ThreadInfo;
     m_thread_info->thread = this;
-    m_thread_info->manager = &CThreadManager::instance();
+    m_thread_info->manager = CThreadManager::instance();
     m_thread_info->name = name;
     m_thread_info->priority = priority;
     m_thread_info->policy = policy;
@@ -74,15 +74,15 @@ CThread::CThread(const std::string& name /*= std::string("defaults")*/, int poli
     //m_thread_info->running = false;
     m_thread_info->joinable = true;
     m_thread_info->destoryed = false;
-    printf("[thread.cpp] thread construct successs, policy = %d, priority = %d\n", policy, priority);
+    tracef("thread construct successs, policy = %d, priority = %d\n", policy, priority);
 }
 
 CThread::~CThread()
 {
-    printf("[thread.cpp] CThread deconstructor\n");
+    tracef("CThread deconstructor\n");
     if (m_thread_info->looping && !m_thread_info->destoryed)
     {
-        printf("[thread.cpp] detach pthread_id = %ld\n", m_thread_info->pthread_id);
+        tracef("detach pthread_id = %ld\n", m_thread_info->pthread_id);
         detach();
     }
 }
@@ -91,7 +91,7 @@ bool CThread::create()
 {
     if (m_thread_info->looping)
     {
-        printf("[thread.cpp] failed in create, pthread_id = %ld\n", m_thread_info->pthread_id);
+        tracef("failed in create, pthread_id = %ld\n", m_thread_info->pthread_id);
         return false;
     }
 
@@ -110,7 +110,7 @@ bool CThread::create()
         int ret = pthread_attr_setschedpolicy(&attr, m_thread_info->policy);
         if (ret != 0)
         {
-            printf("[thread.cpp] failed in pthread_attr_setschedpolicy, ret = %d\n", ret);
+            tracef("failed in pthread_attr_setschedpolicy, ret = %d\n", ret);
             return false;
         }
         int minPriority = (m_thread_info->policy == POLICY_FIFO) ? sched_get_priority_min(SCHED_FIFO) : sched_get_priority_min(SCHED_RR);
@@ -123,20 +123,20 @@ bool CThread::create()
         param.sched_priority = m_thread_info->priority;
         if ((ret = pthread_attr_setschedparam(&attr, &param)) != 0)
         {
-            printf("[thread.cpp] failed in pthread_attr_setschedparam, ret = %d\n", ret);
+            tracef("failed in pthread_attr_setschedparam, ret = %d\n", ret);
             return false;
         }
         // 需要手动控制调度策略、优先级、竞争范围时，必须设为PTHREAD_EXPLICIT_SCHED
         if ((ret = pthread_attr_setinheritsched(&attr, PTHREAD_EXPLICIT_SCHED)) != 0)
         {
-            printf("[thread.cpp] failed in pthread_attr_setinheritsched, ret = %d\n", ret);
+            errorf("failed in pthread_attr_setinheritsched, ret = %d\n", ret);
             return false;
         }
         // 设置竞争范围 Linux支持PTHREAD_SCOPE_SYSTEM,不支持PTHREAD_SCOPE_PROCESS.为了
         // POSIX.1标准指定默认竞争范围由实现定义，此处为PTHREAD_SCOPE_SYSTEM
         // 下面设置此项返回值为 ENOTSUP，即不支持此项
         //pthread_attr_setscope(&attr, PTHREAD_SCOPE_PROCESS); 
-        printf("[thread.cpp] real time thread: policy = %d, minPriority = %d, maxPriority = %d, priority = %d\n",
+        tracef("real time thread: policy = %d, minPriority = %d, maxPriority = %d, priority = %d\n",
         m_thread_info->policy, minPriority, maxPriority, m_thread_info->priority);
     }
     else    // 非实时线程，SCHED_OTHER最小、最大优先级均为0
@@ -146,15 +146,15 @@ bool CThread::create()
         // pthread_attr_getschedpolicy(&attr, &policy);
         // struct sched_param param;
         // pthread_attr_getschedparam(&attr, &param);
-        // printf("[thread.cpp] non real time thread: policy = %d, priority = %d\n", policy, param.sched_priority);
+        // tracef("non real time thread: policy = %d, priority = %d\n", policy, param.sched_priority);
         if (m_thread_info->policy != POLICY_OTHER)
         {
-            printf("[thread.cpp] policy(%d) invalid, adjust to POLICY_OTHER\n", m_thread_info->policy);
+            tracef("policy(%d) invalid, adjust to POLICY_OTHER\n", m_thread_info->policy);
         }
         int ret = pthread_attr_setschedpolicy(&attr, SCHED_OTHER);
         if (ret != 0)
         {
-            printf("[thread.cpp] failed in pthread_attr_setschedpolicy, ret = %d\n", ret);
+            errorf("failed in pthread_attr_setschedpolicy, ret = %d\n", ret);
             return false;
         }
     }
@@ -169,15 +169,15 @@ bool CThread::create()
     if (ret != 0)
     {
         // 返回错误时，第一个参数的值（线程ID）时未定义的
-        printf("[thread.cpp] failed in pthread_create, ret = %d\n", ret);
+        errorf("failed in pthread_create, ret = %d\n", ret);
         return false;
     }
     if ((ret = pthread_attr_destroy(&attr)) != 0)
     {
-        printf("[thread.cpp] failed in pthread_attr_destroy, ret = %d\n", ret);
+        errorf("failed in pthread_attr_destroy, ret = %d\n", ret);
         return false;
     }
-    printf("[thread.cpp] create thread ok, pthread id = %ld, looping = %d\n", 
+    tracef("create thread ok, pthread id = %ld, looping = %d\n", 
             m_thread_info->pthread_id, m_thread_info->looping);
     
     return true;
@@ -189,7 +189,7 @@ bool CThread::join()
 {
     if (!m_thread_info->joinable || !m_thread_info->looping || m_thread_info->destoryed)
     {
-        printf("[thread.cpp] failed in thread(pthread id = %ld), joinable = %d, destoryed = %d\n", 
+        errorf("failed in thread(pthread id = %ld), joinable = %d, destoryed = %d\n", 
                 m_thread_info->pthread_id, m_thread_info->joinable, m_thread_info->destoryed);   
         return false;
     }
@@ -200,7 +200,7 @@ bool CThread::join()
     int ret = pthread_join(m_thread_info->pthread_id, NULL);
     if (ret != 0)
     {
-        printf("[thread.cpp] failed in pthread_join, pthread_id = %ld, ret = %d\n",
+        errorf("failed in pthread_join, pthread_id = %ld, ret = %d\n",
                 m_thread_info->pthread_id, ret);
         return false;
     }
@@ -215,14 +215,14 @@ bool CThread::detach()
 {
     if (!m_thread_info->joinable || m_thread_info->destoryed)
     {
-        printf("[thread.cpp] failed in detach, thread joinable state = %d, destoryed = %d\n", 
+        errorf("failed in detach, thread joinable state = %d, destoryed = %d\n", 
                 m_thread_info->joinable, m_thread_info->destoryed);
         return false;
     }
     int ret = pthread_detach(m_thread_info->pthread_id);
     if (ret != 0)
     {
-        printf("[thread.cpp] failed in pthread_detach(%ld)\n", m_thread_info->pthread_id);
+        errorf("failed in pthread_detach(%ld)\n", m_thread_info->pthread_id);
         return false;
     }
     m_thread_info->joinable = false;
@@ -237,7 +237,7 @@ bool CThread::cancel()
 {
     if (!m_thread_info->looping || m_thread_info->destoryed)
     {
-        printf("[thread.cpp] failed in cancel thread, looping = %d, destoryed = %d\n",
+        errorf("failed in cancel thread, looping = %d, destoryed = %d\n",
                 m_thread_info->looping, m_thread_info->destoryed);
         return false;
     }
@@ -250,7 +250,7 @@ bool CThread::cancel()
     int ret = pthread_cancel(m_thread_info->pthread_id);
     if (ret != 0)
     {
-        printf("[thread.cpp] failed in pthread_cancel ret = %d\n", ret);
+        errorf("failed in pthread_cancel ret = %d\n", ret);
     }
     m_thread_info->looping = false;
 
@@ -274,7 +274,7 @@ bool CThread::joinable() const noexcept
 
 bool CThread::isThreadOver() const noexcept
 {
-    printf("[thread.cpp] thread_id = %ld, looping = %d, destoryed = %d\n",
+    tracef("thread_id = %ld, looping = %d, destoryed = %d\n",
             m_thread_info->pthread_id, m_thread_info->looping, m_thread_info->destoryed);
     return (!m_thread_info->looping && m_thread_info->destoryed);
 }
@@ -364,7 +364,7 @@ CThreadLite::CThreadLite(const ThreadFunc& func,
                         int priority /*= PRIORITY_DEFAULT*/)
     : CThread(name, policy, priority)
 {
-    printf("[thread.cpp] threadlite name = %s\n", name.c_str());
+    tracef("threadlite name = %s\n", name.c_str());
     m_threadLiteInfo = new ThreadLiteInfo;
     m_threadLiteInfo->func = func;
 }

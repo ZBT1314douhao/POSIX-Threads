@@ -204,6 +204,33 @@ src/os/thread.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/thread.cpp.s
 .PHONY : src/os/thread.cpp.s
 
+src/os/thread_specific_data.o: src/os/thread_specific_data.cpp.o
+
+.PHONY : src/os/thread_specific_data.o
+
+# target to build an object file
+src/os/thread_specific_data.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o
+.PHONY : src/os/thread_specific_data.cpp.o
+
+src/os/thread_specific_data.i: src/os/thread_specific_data.cpp.i
+
+.PHONY : src/os/thread_specific_data.i
+
+# target to preprocess a source file
+src/os/thread_specific_data.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.i
+.PHONY : src/os/thread_specific_data.cpp.i
+
+src/os/thread_specific_data.s: src/os/thread_specific_data.cpp.s
+
+.PHONY : src/os/thread_specific_data.s
+
+# target to generate assembly for a file
+src/os/thread_specific_data.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.s
+.PHONY : src/os/thread_specific_data.cpp.s
+
 src/tests/test_condition_variable.o: src/tests/test_condition_variable.cpp.o
 
 .PHONY : src/tests/test_condition_variable.o
@@ -384,6 +411,9 @@ help:
 	@echo "... src/os/thread.o"
 	@echo "... src/os/thread.i"
 	@echo "... src/os/thread.s"
+	@echo "... src/os/thread_specific_data.o"
+	@echo "... src/os/thread_specific_data.i"
+	@echo "... src/os/thread_specific_data.s"
 	@echo "... src/tests/test_condition_variable.o"
 	@echo "... src/tests/test_condition_variable.i"
 	@echo "... src/tests/test_condition_variable.s"

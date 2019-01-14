@@ -14,12 +14,12 @@
 
 
 #ifdef USE_COLORFULPRINT
-#define fatalf(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_FATAL, MODULE_NAME, MODULE_VERSION, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
-#define errorf(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_ERROR, MODULE_NAME, MODULE_VERSION, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
-#define warnf(fmt, ...)     Infra::Utils::print(Infra::Utils::PRINT_LEVEL_WARN, MODULE_NAME, MODULE_VERSION, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
-#define infof(fmt, ...)     Infra::Utils::print(Infra::Utils::PRINT_LEVEL_INFO, MODULE_NAME, MODULE_VERSION, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
-#define debugf(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_DEBUG, MODULE_NAME, MODULE_VERSION, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
-#define tracef(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_TRACE, MODULE_NAME, MODULE_VERSION, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
+#define fatalf(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_FATAL, MODULE_NAME, MODULE_VERSION, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
+#define errorf(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_ERROR, MODULE_NAME, MODULE_VERSION, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
+#define warnf(fmt, ...)     Infra::Utils::print(Infra::Utils::PRINT_LEVEL_WARN,  MODULE_NAME, MODULE_VERSION, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
+#define infof(fmt, ...)     Infra::Utils::print(Infra::Utils::PRINT_LEVEL_INFO,  MODULE_NAME, MODULE_VERSION, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
+#define debugf(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_DEBUG, MODULE_NAME, MODULE_VERSION, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
+#define tracef(fmt, ...)    Infra::Utils::print(Infra::Utils::PRINT_LEVEL_TRACE, MODULE_NAME, MODULE_VERSION, __FILE__, __FUNCTION__, __LINE__, fmt, ##__VA_ARGS__)
 #else
 #define fatalf
 #define errorf
@@ -50,7 +50,7 @@ namespace Utils
     bool setPrintLevel(int level);
     int getPrintLevel();
 
-    void print(int level, const char *module, const char *version, 
+    void print(int level, const char *module, const char *version, const char *filename,
                 const char *func, int line, const char *fmt, ...);
 
 

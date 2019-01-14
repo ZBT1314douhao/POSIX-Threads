@@ -8,6 +8,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     Infra::Utils::setPrintLevel(Infra::Utils::PRINT_LEVEL_ALL);
+#ifdef MODULE_VERSION
+    printf("[test_main.cpp] module version = %s\n", MODULE_VERSION);
+#endif
     printf("[test_main.cpp] current print level = %d\n", Infra::Utils::getPrintLevel());
     fatalf("fatal\n");
     errorf("error\n");

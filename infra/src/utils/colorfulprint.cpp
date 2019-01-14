@@ -1,6 +1,7 @@
 
 #include "colorfulprint.h"
 
+#include <string.h>
 #include <cstdio>
 #include <cstdarg>
 
@@ -48,15 +49,20 @@ int getPrintLevel()
     return currentLevel;
 }
 
-void print(int level, const char *module, const char *version, const char *func, int line, const char *fmt, ...)
+void print(int level, const char *module, const char *version, const char *filename, const char *func, int line, const char *fmt, ...)
 {
     if (level > currentLevel || module == nullptr || version == nullptr || func == nullptr)
     {
         //printf("[colorfulprint.cpp] level = %d, currentLevel = %d\n", level, currentLevel);
         return;
     }
-
-    printf("%s[%s-%s] [%s line:%d] ", color[level], module, version, func, line);
+    const char *file = NULL;
+    const char *slash = strrchr(filename, '/'); // builtin function
+    if (slash)
+    {
+        file = slash + 1;
+    }
+    printf("%s[%s-%s] [%s %s line:%d] ", color[level], module, version, (file == NULL) ? "" : file, func, line);
     va_list va;
     // void va_start(va_list ap, last); last为可变参数列表之前的最后一个参数名称
     // 每个va_start()调用必须有对应的va_end()

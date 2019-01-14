@@ -7,6 +7,7 @@ message(STATUS "project root directory: ${PROJECT_SOURCE_DIR}")
 
 # 指定编译类型 CMAKE_BUILD_TYPE_DEBUG or CMAKE_BUILD_TYPE_RELEASE
 set(CMAKE_BUILD_TYPE_DEBUG)
+#set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # 指定编译器及编译选项，CMAKE_C_FLAGS_DEBUG为C编译器
 #set(CMAKE_CXX_FLAG_DEBUG "-g -Wall -O3")
@@ -50,4 +51,4 @@ link_directories(${PROJECT_SOURCE_DIR}/libs)
 add_executable(${PROJECT_NAME} ${DIR_SRCS})
 
 # 链接静态库
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} gtest pthread jsoncpp)
+target_link_libraries(${PROJECT_NAME} gtest pthread jsoncpp)

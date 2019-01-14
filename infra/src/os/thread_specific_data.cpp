@@ -14,12 +14,14 @@ struct ThreadSpecificData
 
 };
 
+INFRA_SINGLETON_DECLARE(CThreadSpecificData)
+
 pthread_once_t CThreadSpecificData::m_key_once = PTHREAD_ONCE_INIT;
 
 CThreadSpecificData::CThreadSpecificData()
 {
     m_tsd_info = new ThreadSpecificData();
-    pthread_once(&m_key_once, &CThreadSpecificData::init);
+    //pthread_once(&m_key_once, &CThreadSpecificData::init);
 }
 
 CThreadSpecificData::~CThreadSpecificData()
@@ -28,12 +30,13 @@ CThreadSpecificData::~CThreadSpecificData()
     if (m_tsd_info != NULL)
     {   
         delete m_tsd_info;
+        m_tsd_info = NULL;
     }
 }
 
 bool CThreadSpecificData::init()
 {
-    int ret = pthread_key_create(&m_tsd_info->key, NULL);
+    int ret = pthread_key_create(&m_tsd_info->key, &CThreadSpecificData::destory);
     if (ret != 0)
     {
         fatalf("failed int pthread_key_create, ret = %d\n", ret);
@@ -41,17 +44,17 @@ bool CThreadSpecificData::init()
     return (ret == 0);
 }
 
-static void CThreadSpecificData::destructor(void *x)
+static void CThreadSpecificData::destory(void *x)
 {
-    //checked_delete<>
+    Utils::checked_delete(x);
 }
 
 bool CThreadSpecificData::get(void *value)
-{
+{   
     value = pthread_getspecific(m_tsd_info->key);
     if (value == NULL)
     {
-        fatalf("failed in pthread_getspecific, ret = NULL\n");
+        fatalf("failed in pthread_getspecific\n");
     }
     return (value == NULL);
 }

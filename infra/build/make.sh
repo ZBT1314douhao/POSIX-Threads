@@ -3,12 +3,28 @@
 # Infra编译调试脚本
 make_infra()
 {
-    make
+    cmake .. 
+	make -j4
 }
 
-mak_default()
+get_git_version()
 {
-    make
+	commit_ts=`git log -1 --format="%ct"`
+	echo "git commit_ts = ${commit_ts}"
+	commit_time=`date -d @$commit_ts +"%Y-%m-%d %H:%M"`
+	current_time=`date +"%Y-%m-%d %H:%M"`
+	git_version=`git log -1 --format="%h"`
+	echo "commit time = ${commit_time}, current time = ${current_time}"
+	echo "git version = ${git_version}"
+	version="git version:$git_version, commit time:$commit_time, build time:$current_time"
+	echo "git version = ${version}"
+	echo $version
+}
+
+make_default()
+{
+	echo "make && execute challenge"
+    make -j4
     if [ $? -eq 0 ]
     then
     ./challenge
@@ -17,11 +33,12 @@ mak_default()
 
 name=$1 
 
-if [ $# -gt 0 && ${name} = "infra" ]
+echo "argc = $#, name = ${name}"
+if [ $# -gt 0 ] && [ ${name} = "infra" ]
 then
     make_infra
 else
-    mak_default
+    make_default
 fi
 
 echo "------------------------------------------"

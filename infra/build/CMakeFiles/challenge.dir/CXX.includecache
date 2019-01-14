@@ -324,6 +324,8 @@ pthread.h
 cstdio
 -
 
+../src/utils/error_check.h
+
 ../src/utils/singleton.h
 singleton.h
 ../src/utils/singleton.h
@@ -331,10 +333,14 @@ cassert
 -
 memory
 -
+type_traits
+-
 pthread.h
 -
 colorfulprint.h
 ../src/utils/colorfulprint.h
+error_check.h
+../src/utils/error_check.h
 
 ../src/utils/uncopyable.h
 
@@ -410,6 +416,22 @@ utils/singleton.h
 utils/uncopyable.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/uncopyable.h
 
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.cpp
+thread_specific_data.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.h
+assert.h
+-
+utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/colorfulprint.h
+utils/error_check.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/error_check.h
+
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.h
+pthread.h
+-
+utils/uncopyable.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/uncopyable.h
+
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_condition_variable.cpp
 cstdio
 -
@@ -481,6 +503,8 @@ utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.cpp
 colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.h
+string.h
+-
 cstdio
 -
 cstdarg

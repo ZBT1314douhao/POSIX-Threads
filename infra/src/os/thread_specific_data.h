@@ -11,21 +11,19 @@ struct ThreadSpecificData;
 
 class CThreadSpecificData
 {
-    INFRA_DISABLE_COPY(CThreadSpecificData)
+    INFRA_SINGLETON_DECLARE(CThreadSpecificData)
 
 public:
-    typedef pthread_mutex_t     NativeType;
+    typedef pthread_key_t       NativeType;
     typedef NativeType*         NativeHandleType;
 
 public:
-    CThreadSpecificData();
-    ~CThreadSpecificData();
     bool get(void *value);
     bool set(const void *value);
 
 private:
     bool init();
-    static void destructor(void *x);
+    static void destory(void *x);
 
   private:
     ThreadSpecificData *m_tsd_info;

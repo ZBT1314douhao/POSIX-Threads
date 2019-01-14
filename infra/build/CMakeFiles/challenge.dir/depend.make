@@ -7,6 +7,7 @@ CMakeFiles/challenge.dir/src/os/condition.cpp.o: ../src/os/condition.h
 CMakeFiles/challenge.dir/src/os/condition.cpp.o: ../src/os/mutex.h
 
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/utils/colorfulprint.h
+CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/utils/error_check.h
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/utils/singleton.h
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/utils/uncopyable.h
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/os/mutex.cpp
@@ -14,11 +15,18 @@ CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/os/mutex.h
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/os/thread.h
 
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/utils/colorfulprint.h
+CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/utils/error_check.h
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/utils/singleton.h
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/utils/uncopyable.h
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/os/mutex.h
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/os/thread.cpp
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/os/thread.h
+
+CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: ../src/utils/colorfulprint.h
+CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: ../src/utils/error_check.h
+CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: ../src/utils/uncopyable.h
+CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: ../src/os/thread_specific_data.cpp
+CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: ../src/os/thread_specific_data.h
 
 CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o: ../include/gtest/gtest-death-test.h
 CMakeFiles/challenge.dir/src/tests/test_condition_variable.cpp.o: ../include/gtest/gtest-matchers.h
@@ -118,6 +126,7 @@ CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../include/gtest/intern
 CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../include/gtest/internal/gtest-type-util.h
 CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/os/thread.h
 CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/utils/colorfulprint.h
+CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/utils/error_check.h
 CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/utils/singleton.h
 CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/utils/uncopyable.h
 CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o: ../src/tests/test_singleton.cpp
@@ -145,6 +154,7 @@ CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../include/gtest/internal/
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../include/gtest/internal/gtest-type-util.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/os/thread.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/utils/colorfulprint.h
+CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/utils/error_check.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/utils/singleton.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/utils/uncopyable.h
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o: ../src/tests/test_thread.cpp
