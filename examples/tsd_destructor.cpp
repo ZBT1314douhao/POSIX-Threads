@@ -33,7 +33,7 @@ long identity_key_counter = 0;
 void identity_key_destructor(void *value)
 {
     tsd_info_t *info = (tsd_info_t *)value;
-    printf("[tsd_destructor.cpp] tid: %d, %s exiting...\n", info->tid, info->string);
+    printf("[tsd_destructor.cpp] tid: %lu, %s exiting...\n", info->tid, info->string);
     free(value);
     value = NULL;
 
@@ -51,7 +51,7 @@ void identity_key_destructor(void *value)
         }
         printf("[tsd_destructor.cpp] key deleted\n");
     }
-    printf("[tsd_destructor.cpp] identity_key_counter = %d\n", identity_key_counter);
+    printf("[tsd_destructor.cpp] identity_key_counter = %lu\n", identity_key_counter);
     status = pthread_mutex_unlock(&identity_key_mutex);
     if (status != 0)
     {
@@ -65,6 +65,7 @@ void* identity_key_get()
     if (value == NULL)
     {
         value = malloc(sizeof(tsd_info_t));
+        printf("[tsd_destructor.cpp] malloc tsd_info_t for value\n");
         if (value == NULL)
         {
             errno_abort("allocate key value");
@@ -75,23 +76,21 @@ void* identity_key_get()
             err_abort(status, "set tsd");
         }
     }
-
     return value;
 }
 
 void* thread_routine(void *arg)
 {
-    char *thread_info = (char *)arg;
-    printf("[tsd_destructor.cpp] thread_info = %s\n", thread_info);
+    // char *thread_info = (char *)arg;
+    // printf("[tsd_destructor.cpp] thread_info = %s\n", thread_info);
     tsd_info_t *value = (tsd_info_t *)identity_key_get();
     value->tid = pthread_self();
     value->string = (char *)arg;
-    printf("[tsd_destructor.cpp] tid: %ul, %s starting...\n", value->tid, value->string);
+    printf("[tsd_destructor.cpp] tid: %lu, %s starting...\n", value->tid, value->string);
     sleep(2);
 
     return NULL;
 }
-
 
 int main(int argc, char const *argv[])
 {
@@ -108,19 +107,30 @@ int main(int argc, char const *argv[])
     tsd_info_t *value = (tsd_info_t *)identity_key_get();
     value->tid = pthread_self();
     value->string = (char *)"main thread";
+    printf("[tsd_destructor.cpp] main thread info: %lu, %s\n", value->tid, value->string);
 
     status = pthread_create(&thread1, NULL, thread_routine, (void *)thread1_info);
     if (status != 0)
     {
         err_abort(status, "create thread 1");
     }
-
+    //sleep(2);
     status = pthread_create(&thread2, NULL, thread_routine, (void *)thread2_info);
     if (status != 0)
     {
         err_abort(status, "create thread 2");
     }
-    // sleep(10);
+    //sleep(2);
+
+    if ((status = pthread_join(thread1, NULL)) != 0)
+    {
+        err_abort(status, "join thread 1");
+    }
+    if ((status = pthread_join(thread2, NULL)) != 0)
+    {
+        err_abort(status, "join thread 2");
+    }
+    printf("[tsd_destructor.cpp] main end\n");
     pthread_exit(NULL);
 }
 
