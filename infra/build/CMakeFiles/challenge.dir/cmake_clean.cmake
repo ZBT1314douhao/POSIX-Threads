@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o"
   "CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o"
   "CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o"
+  "CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o"
   "CMakeFiles/challenge.dir/src/os/condition.cpp.o"
   "CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
   "CMakeFiles/challenge.dir/src/os/thread.cpp.o"

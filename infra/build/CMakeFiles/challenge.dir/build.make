@@ -177,9 +177,33 @@ CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o.provides: CMakeFiles/challe
 CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o.provides.build: CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o
 
 
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o: CMakeFiles/challenge.dir/flags.make
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o: ../src/tests/test_thread_specific_data.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread_specific_data.cpp
+
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread_specific_data.cpp > CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.i
+
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread_specific_data.cpp -o CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.s
+
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.requires:
+
+.PHONY : CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.requires
+
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.provides: CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.requires
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.provides.build
+.PHONY : CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.provides
+
+CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.provides.build: CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o
+
+
 CMakeFiles/challenge.dir/src/os/condition.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/os/condition.cpp.o: ../src/os/condition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/challenge.dir/src/os/condition.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/challenge.dir/src/os/condition.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/condition.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/condition.cpp
 
 CMakeFiles/challenge.dir/src/os/condition.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/challenge.dir/src/os/condition.cpp.o.provides.build: CMakeFiles/chall
 
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/os/mutex.cpp.o: ../src/os/mutex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/challenge.dir/src/os/mutex.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/mutex.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.cpp
 
 CMakeFiles/challenge.dir/src/os/mutex.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/challenge.dir/src/os/mutex.cpp.o.provides.build: CMakeFiles/challenge
 
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/os/thread.cpp.o: ../src/os/thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/challenge.dir/src/os/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/challenge.dir/src/os/thread.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/thread.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread.cpp
 
 CMakeFiles/challenge.dir/src/os/thread.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/challenge.dir/src/os/thread.cpp.o.provides.build: CMakeFiles/challeng
 
 CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o: ../src/os/thread_specific_data.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.cpp
 
 CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o.provides.build: CMake
 
 CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o: CMakeFiles/challenge.dir/flags.make
 CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o: ../src/utils/colorfulprint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o -c /home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.cpp
 
 CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.i: cmake_force
@@ -304,6 +328,7 @@ challenge_OBJECTS = \
 "CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o" \
 "CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o" \
 "CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o" \
+"CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o" \
 "CMakeFiles/challenge.dir/src/os/condition.cpp.o" \
 "CMakeFiles/challenge.dir/src/os/mutex.cpp.o" \
 "CMakeFiles/challenge.dir/src/os/thread.cpp.o" \
@@ -318,6 +343,7 @@ challenge: CMakeFiles/challenge.dir/src/tests/test_main.cpp.o
 challenge: CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o
 challenge: CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o
 challenge: CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o
+challenge: CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o
 challenge: CMakeFiles/challenge.dir/src/os/condition.cpp.o
 challenge: CMakeFiles/challenge.dir/src/os/mutex.cpp.o
 challenge: CMakeFiles/challenge.dir/src/os/thread.cpp.o
@@ -325,7 +351,7 @@ challenge: CMakeFiles/challenge.dir/src/os/thread_specific_data.cpp.o
 challenge: CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o
 challenge: CMakeFiles/challenge.dir/build.make
 challenge: CMakeFiles/challenge.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable challenge"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable challenge"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/challenge.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -338,6 +364,7 @@ CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_main.
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o.requires
+CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/condition.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/mutex.cpp.o.requires
 CMakeFiles/challenge.dir/requires: CMakeFiles/challenge.dir/src/os/thread.cpp.o.requires

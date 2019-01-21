@@ -90,31 +90,40 @@ TEST_F(CThreadTest, ThreadCancel)
     //EXPECT_EQ(thread.isThreadOver(), true);
 }
 
+TEST_F(CThreadTest, GetCurrentThreadId)
+{
+    int tid = getCurrentThreadId();
+    tracef("tid = %d\n", tid);
+    tid = getCurrentThreadId();
+    tracef("tid = %d\n", tid);
+    tid = getCurrentThreadId();
+    tracef("tid = %d\n", tid);
+}
 
-    // thread test
-    class CThreadTest1 : public Infra::CThread
+// thread test
+class CThreadTest1 : public Infra::CThread
+{
+  public:
+    CThreadTest1()
     {
-      public:
-        CThreadTest1()
-        {
-            //create();            
-        }
-        ~CThreadTest1()
-        {
-            printf("[main.cpp line:24] deconstrucotr\n");
-            //join();
-        }
-        void run()
+        //create();
+    }
+    ~CThreadTest1()
+    {
+        printf("[main.cpp line:24] deconstrucotr\n");
+        //join();
+    }
+    void run()
+    {
+
+        while (looping())
         {
 
-            while (looping())
-            {
-
-                printf("[main.cpp line:29] CThreadTest1 looping, tid = %ld, name = %s, currentThreadId = %d\n",
-                       getThreadId(), getName().c_str(), getCurrentThreadId());
-                sleepMicroSecond(2000);
-            }
+            printf("[main.cpp line:29] CThreadTest1 looping, tid = %ld, name = %s, currentThreadId = %d\n",
+                   getThreadId(), getName().c_str(), getCurrentThreadId());
+            sleepMicroSecond(2000);
         }
+    }
     };
 
     // 使用普通函数

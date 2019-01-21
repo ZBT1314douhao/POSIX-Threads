@@ -17,6 +17,7 @@
 #include <pthread.h>
 
 #include "mutex.h"
+#include "thread_specific_data.h"
 #include "utils/colorfulprint.h"
 
 namespace Infra {
@@ -287,8 +288,19 @@ unsigned long int CThread::getThreadId() const noexcept
 
 // 连续调用会损耗性能，考虑用线程私有数据作为缓存保存
 int CThread::getCurrentThreadId()
-{
-    return static_cast<int>(::syscall(SYS_gettid));
+{ 
+    static CThreadSpecificData tsd_tid;
+    void *cached_tid = nullptr;
+    tsd_tid.get(&cached_tid);
+    if (cached_tid == nullptr)
+    {
+        long tid = static_cast<int>(::syscall(SYS_gettid));
+        tsd_tid.set((void *)tid);
+        return tid;
+    }
+
+    return (long)cached_tid;
+    // return static_cast<int>(::syscall(SYS_gettid));
 }
 
 void CThread::sleepMicroSecond(int ms)

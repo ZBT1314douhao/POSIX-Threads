@@ -366,6 +366,33 @@ src/tests/test_thread.cpp.s:
 	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_thread.cpp.s
 .PHONY : src/tests/test_thread.cpp.s
 
+src/tests/test_thread_specific_data.o: src/tests/test_thread_specific_data.cpp.o
+
+.PHONY : src/tests/test_thread_specific_data.o
+
+# target to build an object file
+src/tests/test_thread_specific_data.cpp.o:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o
+.PHONY : src/tests/test_thread_specific_data.cpp.o
+
+src/tests/test_thread_specific_data.i: src/tests/test_thread_specific_data.cpp.i
+
+.PHONY : src/tests/test_thread_specific_data.i
+
+# target to preprocess a source file
+src/tests/test_thread_specific_data.cpp.i:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.i
+.PHONY : src/tests/test_thread_specific_data.cpp.i
+
+src/tests/test_thread_specific_data.s: src/tests/test_thread_specific_data.cpp.s
+
+.PHONY : src/tests/test_thread_specific_data.s
+
+# target to generate assembly for a file
+src/tests/test_thread_specific_data.cpp.s:
+	$(MAKE) -f CMakeFiles/challenge.dir/build.make CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.s
+.PHONY : src/tests/test_thread_specific_data.cpp.s
+
 src/utils/colorfulprint.o: src/utils/colorfulprint.cpp.o
 
 .PHONY : src/utils/colorfulprint.o
@@ -429,6 +456,9 @@ help:
 	@echo "... src/tests/test_thread.o"
 	@echo "... src/tests/test_thread.i"
 	@echo "... src/tests/test_thread.s"
+	@echo "... src/tests/test_thread_specific_data.o"
+	@echo "... src/tests/test_thread_specific_data.i"
+	@echo "... src/tests/test_thread_specific_data.s"
 	@echo "... src/utils/colorfulprint.o"
 	@echo "... src/utils/colorfulprint.i"
 	@echo "... src/utils/colorfulprint.s"

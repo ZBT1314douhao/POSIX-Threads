@@ -318,6 +318,12 @@ utils/singleton.h
 utils/uncopyable.h
 ../src/os/utils/uncopyable.h
 
+../src/os/thread_specific_data.h
+pthread.h
+-
+utils/uncopyable.h
+../src/os/utils/uncopyable.h
+
 ../src/utils/colorfulprint.h
 pthread.h
 -
@@ -403,6 +409,8 @@ pthread.h
 -
 mutex.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/mutex.h
+thread_specific_data.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.h
 utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/colorfulprint.h
 
@@ -419,8 +427,12 @@ utils/uncopyable.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.cpp
 thread_specific_data.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/thread_specific_data.h
-assert.h
+cassert
 -
+cerrno
+-
+cstdlib
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/os/cstdlib
 utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/os/utils/colorfulprint.h
 utils/error_check.h
@@ -497,6 +509,16 @@ gtest/gtest.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
 os/thread.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/os/thread.h
+utils/colorfulprint.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/utils/colorfulprint.h
+
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread_specific_data.cpp
+gtest/gtest.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/gtest/gtest.h
+os/thread.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/os/thread.h
+os/thread_specific_data.h
+/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/os/thread_specific_data.h
 utils/colorfulprint.h
 /home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/utils/colorfulprint.h
 

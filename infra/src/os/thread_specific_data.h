@@ -11,24 +11,23 @@ struct ThreadSpecificData;
 
 class CThreadSpecificData
 {
-    INFRA_SINGLETON_DECLARE(CThreadSpecificData)
-
+    INFRA_DISABLE_COPY(CThreadSpecificData)
 public:
     typedef pthread_key_t       NativeType;
     typedef NativeType*         NativeHandleType;
 
 public:
-    bool get(void *value);
+    CThreadSpecificData();
+    ~CThreadSpecificData();   
+    bool get(void **value);
     bool set(const void *value);
+    NativeHandleType nativeHandle();
 
 private:
-    bool init();
-    static void destory(void *x);
+    bool isValidKey() const;
 
-  private:
+private:
     ThreadSpecificData *m_tsd_info;
-    static pthread_once_t m_key_once;
-    ;
 };
 
 

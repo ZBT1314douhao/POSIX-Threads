@@ -41,7 +41,11 @@ CMutex::~CMutex()
 {
     assert(m_mutex_info->owner == 0);
     int ret = pthread_mutex_destroy(&m_mutex_info->mutex);
-    if (ret != 0)
+    if (ret == EBUSY)
+    {
+        fatalf("failed in pthread_mutex_destroy, the mutex is currently locked\n");
+    }
+    else if (ret != 0)
     {
         fatalf("failed in pthread_mutex_destroy, ret = %d\n", ret);
     }

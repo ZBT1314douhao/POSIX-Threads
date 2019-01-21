@@ -1,67 +1,90 @@
 
 #include "thread_specific_data.h"
 
-#include <assert.h>
+#include <cassert>
+#include <cerrno>
+#include "cstdlib"
 #include "utils/colorfulprint.h"
 #include "utils/error_check.h"
 
-namespace Infra
-{
+namespace Infra {
 
 struct ThreadSpecificData
 {
     pthread_key_t key;
-
+    bool valid;
 };
-
-INFRA_SINGLETON_DECLARE(CThreadSpecificData)
-
-pthread_once_t CThreadSpecificData::m_key_once = PTHREAD_ONCE_INIT;
 
 CThreadSpecificData::CThreadSpecificData()
 {
     m_tsd_info = new ThreadSpecificData();
-    //pthread_once(&m_key_once, &CThreadSpecificData::init);
+    int ret = pthread_key_create(&m_tsd_info->key, NULL);
+    if (ret != 0)
+    {
+        fatalf("failed in pthread_key_create, ret = %d\n", ret);
+    }
+    m_tsd_info->valid = (ret == 0);
 }
 
 CThreadSpecificData::~CThreadSpecificData()
 {
-    pthread_key_delete(m_tsd_info->key);
-    if (m_tsd_info != NULL)
-    {   
-        delete m_tsd_info;
-        m_tsd_info = NULL;
-    }
-}
-
-bool CThreadSpecificData::init()
-{
-    int ret = pthread_key_create(&m_tsd_info->key, &CThreadSpecificData::destory);
-    if (ret != 0)
+    if (isValidKey())
     {
-        fatalf("failed int pthread_key_create, ret = %d\n", ret);
+        int ret = pthread_key_delete(m_tsd_info->key);
+        if (ret == EINVAL)
+        {
+            errorf("key is not a valid, allocated TSD key\n");
+        }
+        else if (ret != 0)
+        {
+            errorf("failed in pthread_key_delete, ret = %d\n", ret);
+        }
     }
-    return (ret == 0);
+    delete m_tsd_info;
+    m_tsd_info = NULL;
 }
 
-static void CThreadSpecificData::destory(void *x)
-{
-    Utils::checked_delete(x);
-}
-
-bool CThreadSpecificData::get(void *value)
+bool CThreadSpecificData::get(void **value)
 {   
-    value = pthread_getspecific(m_tsd_info->key);
-    if (value == NULL)
+    if (!isValidKey())
     {
-        fatalf("failed in pthread_getspecific\n");
+        return false;
     }
-    return (value == NULL);
+
+    *value = pthread_getspecific(m_tsd_info->key);
+    if (*value != nullptr)
+    {
+        infof("value = %d(addr = %p)\n", *value, value);
+    }
+
+    return (value != nullptr);
 }
 
 bool CThreadSpecificData::set(const void *value)
 {
-    return (pthread_setspecific(m_tsd_info->key, value) != 0);
+    if (!isValidKey())
+    {
+        return false;
+    }
+
+    infof("before value = %lu\n", value);
+    int ret = pthread_setspecific(m_tsd_info->key, value);
+    if (ret != 0)
+    {
+        errorf("failed in pthread_setspecific, ret = %d\n", ret);
+    }
+
+    return (ret == 0);
+}
+
+CThreadSpecificData::NativeHandleType CThreadSpecificData::nativeHandle()
+{
+    return &m_tsd_info->key;
+}
+
+bool CThreadSpecificData::isValidKey() const
+{
+    return m_tsd_info->valid;
 }
 
 }; // namespace Infra

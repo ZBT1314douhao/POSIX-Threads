@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_mutex.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_mutex.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_singleton.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_singleton.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_thread.cpp.o"
+  "/home/lumia/workspace/documents/POSIX-Threads/infra/src/tests/test_thread_specific_data.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/tests/test_thread_specific_data.cpp.o"
   "/home/lumia/workspace/documents/POSIX-Threads/infra/src/utils/colorfulprint.cpp" "/home/lumia/workspace/documents/POSIX-Threads/infra/build/CMakeFiles/challenge.dir/src/utils/colorfulprint.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
